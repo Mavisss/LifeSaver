@@ -4,6 +4,9 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,17 +20,9 @@ public class MainMenu extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
 
-        Button btnMenu = (Button) findViewById(R.id.btnMenu);
         Button btnChkLocation = (Button) findViewById(R.id.btnChkLocation);
         Button btnOpenChatR = (Button) findViewById(R.id.btnOpenChatR);
 
-        btnMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1 = new Intent(MainMenu.this, UserMenu.class);
-                startActivity(intent1);
-            }
-        });
         btnChkLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,6 +37,28 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_user, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.menuUserAccount:
+                Intent intent = new Intent(MainMenu.this, UserAccountActivity.class);
+                startActivity(intent);
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
 

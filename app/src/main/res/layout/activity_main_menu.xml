@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.coursework.mavisss.lifesaver.MainMenu">
+    tools:context="com.coursework.mavisss.lifesaver.MainMenu"
+    android:background="@drawable/bg1">
+
 
     <ImageView
         android:id="@+id/imgMainLogo"
@@ -15,14 +17,6 @@
         android:layout_alignParentTop="true"
         android:src="@drawable/main_logo" />
 
-    <Button
-        android:id="@+id/btnMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Menu"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"/>
     <Button
         android:id="@+id/btnChkLocation"
         android:layout_width="match_parent"
